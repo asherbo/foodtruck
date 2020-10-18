@@ -3,8 +3,9 @@ pipeline {
     stages {
         stage('---Build---') {
             steps {
-                sh "docker-compose build"
-                sh "docker-compose up"
+                sh "cd flask-app/" 
+                sh "apk add --update nodejs nodejs-npm"
+                sh "RUN apk add --update npm"
             }
         }
 
